@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+
+{% block title %} Welcome {% endblock %}
+
+{% block content %}
+    <h1>Welcome to my page</h1>
+    <p>
+        This is a demo for a Flask application example !
+    </p>
+    <h2>Flash cards</h2>
+    <ul>
+        {% for card in cards %}
+            <li>
+                <a href="{{ url_for('card_view', index = loop.index0)  }}">{{ card.question }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
